@@ -1,6 +1,5 @@
 <script>
   import { onMount } from "svelte";
-  let pageName = "Home Page";
   let res = [];
   let someres = [];
   onMount(async () => {
@@ -8,6 +7,8 @@
     res = await response.json();
     someres = res.slice(0, 5);
   });
+
+  export let location;
 </script>
 
 <div class="home">

@@ -18,6 +18,6 @@
 
 <style>
   .dynamic {
-    padding: 0 2rem;
+    padding: 0 5rem;
   }
 </style>

@@ -1,5 +1,5 @@
 <script>
-  let pageName = "About Page";
+  export let location;
 </script>
 
 <div>About</div>
