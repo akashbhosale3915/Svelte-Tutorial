@@ -13,3 +13,12 @@ h3,
 h5 {
   margin: 0;
 }
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: #f10808;
+}

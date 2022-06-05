@@ -1,33 +1,23 @@
 <script>
-  import { onMount } from "svelte";
+  import { Route, Router } from "svelte-routing";
 
-  let res = [];
-  onMount(async () => {
-    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-    res = await response.json();
-  });
+  import Navbar from "./components/Navbar.svelte";
+  import About from "./pages/About.svelte";
+  import Contact from "./pages/contact.svelte";
+  import Home from "./pages/Home.svelte";
 </script>
 
-<main>
-  {#each res as post}
-    <div class="post">
-      <h3>{post.title}</h3>
-      <h5>{post.body}</h5>
-    </div>
-  {/each}
-</main>
+<Router>
+  <Navbar />
+  <div class="dynamic">
+    <Route path="/" component={Home} />
+    <Route path="about" component={About} />
+    <Route path="contact" component={Contact} />
+  </div>
+</Router>
 
 <style>
-  .post {
-    width: 80%;
-    margin: 15px auto;
-    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    padding: 10px;
-  }
-
-  .post h3 {
-    margin-bottom: 10px;
-    text-transform: capitalize;
+  .dynamic {
+    padding: 0 2rem;
   }
 </style>
